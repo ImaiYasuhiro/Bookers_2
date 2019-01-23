@@ -1,0 +1,32 @@
+  <% if flash[:notice] %>
+      <div class= "flash">
+        <%= flash[:notice] %>
+      </div>
+  <% end %>
+
+  <%= render 'users/userinfo', user: current_user %>
+  <%= render 'books/newbook', book: @book %>
+
+  <div class= "container">
+  <div class= "row">
+<h1>Books detail</h1>
+<table class="table table-hover table-inverse">
+　<tr>
+　　<th></th>
+　　<th></th>
+   <th></th>
+   <th></th>
+   <th></th>
+　</tr>
+
+   <tr>
+   <td><%= attachment_image_tag @book.user, :profile_image, :fill, 60, 60, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg" %></td>
+   <td><%= link_to book.title, class: "show_#{user.id}" %></td>
+   <td><%= book.body %></td>
+   <td></td>
+   <td></td>
+   <td></td>
+   </tr>
+</table>
+</div>
+</div>

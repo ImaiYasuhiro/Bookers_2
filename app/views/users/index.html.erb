@@ -1,0 +1,35 @@
+  <div class= "container">
+  <div class="row">
+<% if flash[:notice] %>
+      <div class= "flash">
+        <%= flash[:notice] %>
+      </div>
+  <% end %>
+
+  <%= render 'users/userinfo', user: @user %>
+  <%= render 'books/newbook', book: @book %>
+
+<div class= "col-xs-9">
+<h1>Users</h1>
+<table class="table table-hover table-inverse">
+  <thead>
+  <tr>
+  <th>image</th>
+  <th>name</th>
+  <th　colspan="3"></th>
+  </tr>
+  </thead>
+
+　　<% @users.each do |user| %>
+   <tbody>
+   <tr>
+   <td><%= attachment_image_tag user, :profile_image, :fill, 60, 60, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg" %></td>
+   <td><%= user.name %></td>
+   <td><%= link_to "Show", user_path(user.id), class: "show_#{user.id}" %></td>
+   </tr>
+   </tbody>
+   <% end %>
+</table>
+</div>
+</div>
+</div>
