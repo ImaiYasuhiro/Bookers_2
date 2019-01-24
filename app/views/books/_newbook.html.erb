@@ -1,6 +1,7 @@
+<% if user_signed_in? %>
 <h1>New book</h1>
 <!-- form_for部分 -->
-<%= form_for(@book) do |f| %>
+<%= form_for(book) do |f| %>
 
     <h4>Title</h4>
     <%= f.text_field :title, class: "col-xs-12 book_title" %>
@@ -14,4 +15,5 @@
 
   </div>
 
+<% end %>
 <% end %>
