@@ -5,10 +5,10 @@
   <div class="field">
      <%= devise_error_messages! %>
          <div><%= f.label :name %><br />
-             <%= f.text_field :name, autofocus: true, autocomplete: "name" %></div>
+             <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "name" %></div>
 
          <div><%= f.label :password %><br />
-             <%= f.password_field :password, autocomplete: "current-password" %></div>
+             <%= f.password_field :password, autocomplete: "current-password", class: "password" %></div>
 
          <% if devise_mapping.rememberable? -%>
          <div class="field">

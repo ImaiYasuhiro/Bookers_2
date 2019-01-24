@@ -4,7 +4,7 @@
     <h2>User info</h2>
     <table class='table'>
     <tr>
-      <%= attachment_image_tag user, :profile_image, :fill, 60, 60, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg" %></tr>
+      <%= attachment_image_tag user, :profile_image, :fill, 60, 60, format: 'jpeg', class: "img-circle pull-left user-image", fallback: "no_image.jpg" %></tr>
         <tr>
         <th>name</th>
         <th><%= user.name %></th>
@@ -16,6 +16,6 @@
         </table>
 
         <div class='row'>
-        <p><%= link_to " ", edit_user_path(user), class: "col-xs-12 btn btn-default glyphicon glyphicon-wrench" %></p>
+        <p><%= link_to " ", edit_user_path(user), class: "col-xs-12 btn btn-default glyphicon glyphicon-wrench edit_user_#{user.id}" %></p>
         </div>
     <% end %>
