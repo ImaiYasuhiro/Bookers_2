@@ -7,16 +7,16 @@ class User < ApplicationRecord
   has_many :post_images, dependent: :destroy
   has_many :post_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
-  attachment :profile_image
+  attachment :user_image
 
   has_many :books
   validates :name,
     presence: true,
     length: { minimum: 2, maximum: 20 }
-  validates :email,
-    presence: true
-  validates :password,
-    presence: true
+  # validates :email,
+  #   presence: true
+  # validates :password,
+  #   presence: true
   validates :introduction,
     length: { maximum: 50 }
 

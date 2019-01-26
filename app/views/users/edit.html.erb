@@ -2,8 +2,17 @@
 <div class='row'>
   <div class='col-xs-3'>
 
+<% if flash[:notice] %>
+      <div class= "flash">
+        <%= flash[:notice] %>
+      </div>
+  <% end %>
+
 <h1>User info</h1>
 
+
+
+<%= form_for(@user) do |f| %>
 <% if @user.errors.any? %>
   <div id="error_explanation" class="alert alert-danger">
     <ul>
@@ -13,22 +22,19 @@
     </ul>
   </div>
 <% end %>
-
-<%= form_for(@user) do |f| %>
-
   <h4>Name</h4>
   <label class="control-label sr-only" for="inputEmail">Name</label>
  <%= f.text_field :name, autofocus: true, class:"name", id:"inputEmail", placeholder:"名前"%>
 
  <h4>Image</h4>
  <label class="control-label sr-only" for="inputEmail">ProfileImage</label>
- <%= f.attachment_field :profile_image, placeholder: "プロフィール画像", class: "user-image" %>
+ <%= f.attachment_field :user_image, placeholder: "プロフィール画像", class: "user-image" %>
 
 
  <h4>Introduction</h4>
  <p><%= f.text_area :introduction, class: "introduction" %></p>
 
-<%= f.submit "Update User" %>
+<%= f.submit "Update User", class: "btn btn-primary" %>
 <% end %>
 </section>
 </div>

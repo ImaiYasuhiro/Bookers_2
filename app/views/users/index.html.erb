@@ -11,7 +11,7 @@
 
 <div class= "col-xs-9">
 <h1>Users</h1>
-<table class="table table-hover table-inverse">
+　<table class="table table-hover table-inverse">
   <thead>
   <tr>
   <th>image</th>
@@ -23,7 +23,7 @@
 　　<% @users.each do |user| %>
    <tbody>
    <tr>
-   <td><%= attachment_image_tag user, :profile_image, :fill, 60, 60, format: 'jpeg', class: "img-circle pull-left user-image", fallback: "no_image.jpg" %></td>
+   <td><%= attachment_image_tag user, :user_image, :fill, 60, 60, format: 'jpeg', class: "img-circle pull-left user-image", fallback: "no_image.jpg" %></td>
    <td><%= user.name %></td>
    <td><%= link_to "Show", user_path(user.id), class: "user_#{user.id}" %></td>
    </tr>
